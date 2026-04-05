@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff8fd;
+  --foreground: #4a2740;
+  --surface: #ffffff;
+  --surface-soft: #ffeef8;
+  --surface-strong: #ffd6eb;
+  --primary: #db4a95;
+  --primary-soft: #f17eb4;
+  --accent: #b55b9f;
+  --ring: #f5a8cf;
+  --border: #f4bfdc;
+  --shadow: 219 74 149;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-nunito);
+  --font-heading: var(--font-fraunces);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, #ffc3e1 0%, transparent 35%),
+    radial-gradient(circle at 85% 18%, #ffd8ef 0%, transparent 40%),
+    linear-gradient(160deg, #fff8fd 0%, #fff2fa 45%, #ffeef8 100%);
+  color: var(--foreground);
+  font-family: var(--font-nunito), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), serif;
+}
+
+::selection {
+  background: #f7b7da;
+  color: #4a2740;
+}
+
+.cycle-ring-shimmer {
+  animation: cycle-ring-shimmer 6s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes cycle-ring-shimmer {
+  from {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10vh;
+  animation-name: confetti-fall;
+  animation-timing-function: cubic-bezier(0.18, 0.7, 0.3, 1);
+  animation-fill-mode: both;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.14);
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(12px, 112vh, 0) rotate(540deg) scale(1.03);
+    opacity: 0;
+  }
+}
+
+.doctor-mode .doctor-print-header {
+  background: linear-gradient(90deg, #fff4fa 0%, #ffeaf5 100%);
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #3d1f32 !important;
+  }
+
+  nav,
+  button,
+  input,
+  select,
+  textarea {
+    display: none !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  section,
+  article {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border-color: #f5b8d9 !important;
+    background: #fff !important;
+  }
+
+  .doctor-print-header {
+    display: block !important;
+  }
+}
