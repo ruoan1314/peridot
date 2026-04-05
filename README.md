@@ -21,10 +21,3 @@ Then open [http://localhost:3000](http://localhost:3000).
 - Tailwind CSS
 - jsPDF for export
 
-## Deploy on Vercel
-
-This project is ready for Vercel:
-
-1. Push to GitHub
-2. Import the repo on [Vercel](https://vercel.com/new)
-3. Deploy
