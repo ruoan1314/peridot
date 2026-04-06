@@ -493,14 +493,7 @@ function mapShareRow(row: ShareRow): ShareReportLink {
 }
 
 function getGreeting() {
-  const hour = new Date().getHours();
-  if (hour < 12) {
-    return "Good morning, Anto";
-  }
-  if (hour < 18) {
-    return "Good afternoon, Anto";
-  }
-  return "Good evening, Anto";
+  return "Cutie";
 }
 
 function getAffirmationForToday() {
