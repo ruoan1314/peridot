@@ -493,7 +493,7 @@ function mapShareRow(row: ShareRow): ShareReportLink {
 }
 
 function getGreeting() {
-  return "Cutie";
+  return "Hello Cutie";
 }
 
 function getAffirmationForToday() {
